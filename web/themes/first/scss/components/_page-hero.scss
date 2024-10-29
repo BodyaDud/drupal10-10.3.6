@@ -35,9 +35,6 @@
       @extend .button--primary !optional;
 
       &:hover {
-        background: variables.$color-light;
-        color: variables.$color-primary;
-        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
         animation: pulse 1s infinite;
       }
 

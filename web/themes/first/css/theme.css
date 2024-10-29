@@ -198,9 +198,6 @@ a.button--outline:hover {
   margin-top: 48px;
 }
 .page-hero__actions a:hover {
-  background: #fff;
-  color: #ff5300;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   animation: pulse 1s infinite;
 }
 @keyframes pulse {
