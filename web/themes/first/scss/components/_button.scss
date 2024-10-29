@@ -1,0 +1,34 @@
+@use "base/variables" as variables;
+
+.button,
+a.button {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 24px;
+  border: 0;
+  margin: 0;
+  padding: 12px 20px;
+  display: inline-flex;
+  appearance: none;
+  text-decoration: none;
+
+  &--primary {
+    background: variables.$color-primary;
+    color: variables.$color-light;
+    border-radius: 4px;
+    box-shadow: 4px 5px 15px rgba(variables.$color-primary, 0.4);
+  }
+
+  &--outline {
+    border: 1px solid variables.$color-text-heading;
+    background: none;
+    color: variables.$color-text-heading;
+    padding: 11px 19px;
+    border-radius: 4px;
+
+    &:hover {
+      border-color: variables.$color-primary;
+      color: variables.$color-primary;
+    }
+  }
+}

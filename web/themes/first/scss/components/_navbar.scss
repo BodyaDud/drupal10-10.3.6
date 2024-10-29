@@ -1,0 +1,54 @@
+@use "base/variables" as variables;
+
+.page__navbar {
+  box-shadow: 0px 1px 10px rgba(#000, 0.1);
+  background: variables.$color-light;
+}
+
+.navbar {
+  padding: 24px variables.$gutter-sm;
+
+  &__container {
+    max-width: variables.$container-max;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+
+  &__logo {
+    display: block;
+    height: 48px;
+  }
+
+  .navigation {
+    .menu {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu-item {
+      & > a,
+      & > span {
+        display: inline-flex;
+        font-size: 1.25rem;
+        line-height: 24px;
+        font-weight: 500;
+        color: variables.$color-text-heading;
+        text-decoration: none;
+        padding: 12px 16px;
+      }
+
+      & > a:hover {
+        color: variables.$color-primary;
+      }
+    }
+  }
+
+  &__actions {
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,17 @@
+{% set classes = [
+  'region',
+  'region-' ~ region|clean_class,
+  'navbar',
+] %}
+
+<div{{ attributes.addClass(classes) }}>
+  <div class="navbar__container">
+    <div class="navbar__branding">
+      <img class="navbar__logo" src="/{{ directory }}/logo.svg" />
+    </div>
+    {{ content }}
+    <div class="navbar__actions">
+      <a class="button button--outline" href="{{ path('contact.site_page')}}">{{ "Let's talk"|t }}</a>
+    </div>
+  </div>
+</div>

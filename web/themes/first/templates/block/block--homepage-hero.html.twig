@@ -1,0 +1,36 @@
+{% set classes = [
+  'block',
+  'block-' ~ configuration.provider|clean_class,
+  'block-' ~ plugin_id|clean_class,
+  'page-hero',
+] %}
+
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  <div class="page-hero__container container">
+    {% block content %}
+      <div class="page-hero__content">
+        <div class="page-hero__group">
+          <h1 class="page-hero__title">
+            {{ content.field_text_formatted|without('#theme') }}
+          </h1>
+
+          <div class="page-hero__text">
+            {{ content.body|without('#theme') }}
+          </div>
+
+          <div class="page-hero__actions">
+            {% for item in content.field_link_m|children %}
+              {{ item }}
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="page-hero__image">
+          {{ content.field_media|without('#theme') }}
+        </div>
+      </div>
+    {% endblock %}
+  </div>
+</div>

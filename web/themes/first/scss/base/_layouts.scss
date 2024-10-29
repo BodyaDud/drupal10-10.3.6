@@ -1,0 +1,40 @@
+@use "base/variables" as variables;
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: variables.$font-family;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.dialog-off-canvas-main-canvas,
+.page {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.page__main {
+  flex-grow: 1;
+}
+
+.page__footer {
+  padding: 24px variables.$gutter-sm;
+}
+
+.container {
+  width: 100%;
+  max-width: variables.$container-max + variables.$gutter-sm * 2;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: variables.$gutter-sm;
+  padding-right: variables.$gutter-sm;
+}
