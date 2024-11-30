@@ -1,0 +1,39 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+    'page-about-us',
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  <div class="page-about-us__container container">
+    {% block content %}
+      <div class="page-about-us__content">
+        <div class="page-about-us__group">
+          <div class="page-about-us__label">
+            {{ content.	field_label|without('#theme') }}
+          </div>
+          <h2 class="page-about-us__title">
+            {{ content.	field_text_formatted|without('#theme') }}
+          </h2>
+          <div class="page-about-us__text">
+            {{ content.body|without('#theme') }}
+          </div>
+          <div class="page-about-us__actions">
+            {% for item in content.field_link_m|children %}
+              {{ item }}
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="page-about-us__image">
+            {{ content.field_media|without('#theme') }}
+        </div>
+      </div>
+    {% endblock %}
+  </div>
+</div>
